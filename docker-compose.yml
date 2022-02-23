@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    # https://hub.docker.com/_/postgres
+    image: postgres:14
+    environment:
+      # See PostgreSQL documentation about "trust":
+      # https://www.postgresql.org/docs/current/auth-trust.html
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
