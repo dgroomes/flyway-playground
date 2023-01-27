@@ -30,12 +30,18 @@ A simple Gradle and Java project that builds a database schema using Flyway.
 
 See the README in [basic/](basic/).
 
+### `advanced/`
+
+An intermediate Flyway example project.
+
+See the README in [advanced/](advanced/).
+
 
 ## Wish List
 
 General clean-ups, TODOs and things I wish to implement for this project:
 
-* [ ] IN PROGRESS Consider creating a `basic/` and an `advanced/` subproject. I want to keep the basic stuff optimized for getting
+* [x] DONE Consider creating a `basic/` and an `advanced/` subproject. I want to keep the basic stuff optimized for getting
   up running. In `advanced/` I want to do stuff like create a custom Java-based migration, andy maybe explore idempotent
   things like repeatable migrations. And other features I'm not considering.
   * [x] DONE Create a `basic/` subproject.

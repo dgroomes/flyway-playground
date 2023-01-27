@@ -24,3 +24,4 @@ rootProject.name = "flyway-playground"
 // You get code completion and project navigation out-of-the-box. Pretty slick!
 
 includeBuild("basic")
+includeBuild("advanced")
