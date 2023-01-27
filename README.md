@@ -3,13 +3,16 @@
 📚 Learning and exploring Flyway, the Java-based database migration tool.
 
 > Database Migrations Made Easy.
-> --<cite>https://github.com/flyway/flyway/</cite>
+> 
+> --<cite> https://github.com/flyway/flyway/ </cite>
 
-## Description
+
+## Overview
 
 This codebase defines an example SQL schema, an example Java program that connects to the database (Postgres), and uses
 Flyway to apply the schema to the database via a so-called *database  migration*. Flyway is invoked by way of the Flyway
 Gradle plugin.    
+
 
 ## Instructions
 
@@ -17,9 +20,13 @@ Follow these instructions to perform a database migration and run the sample pro
 
 1. Use Java 17
 2. Start the database
-   * `docker-compose up --detach`
+   * ```shell
+     docker-compose up --detach
+     ```
 3. Run the database migration
-   * `./gradlew flywayMigrate --info`
+   * ```shell
+     ./gradlew flywayMigrate --info
+     ```
    * The database tables and sample data were created!
    * Tons of stuff was logged to the screen unfortunately, but if you look closely you'll see something like:
      ```text
@@ -31,8 +38,15 @@ Follow these instructions to perform a database migration and run the sample pro
      ...omitted...
      ```
 4. Run the Java program
-   * `./gradlew run`
-   * Notice that the program successfully read from the table! 
+   * ```shell
+     ./gradlew run
+     ```
+   * Notice that the program successfully read from the table!
+5. Stop the database
+   * ```shell
+     docker-compose down
+     ```
+
 
 ## Reference
 
