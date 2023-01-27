@@ -9,44 +9,36 @@
 
 ## Overview
 
-This codebase defines an example SQL schema, an example Java program that connects to the database (Postgres), and uses
-Flyway to apply the schema to the database via a so-called *database  migration*. Flyway is invoked by way of the Flyway
-Gradle plugin.    
+This codebase is my way of learning Flyway and building a corpus of runnable reference code.
+
+**NOTE**: This project was developed on macOS. It is for my own personal use.
 
 
-## Instructions
+## Standalone subprojects
 
-Follow these instructions to perform a database migration and run the sample program.
+This repository illustrates different concepts, patterns and examples via standalone subprojects. Each sub-project is
+completely independent of the others and do not depend on the root project. This _standalone sub-project constraint_
+forces the subprojects to be complete and maximizes the reader's chances of successfully running, understanding, and
+re-using the code.
 
-1. Use Java 17
-2. Start the database
-   * ```shell
-     docker-compose up --detach
-     ```
-3. Run the database migration
-   * ```shell
-     ./gradlew flywayMigrate --info
-     ```
-   * The database tables and sample data were created!
-   * Tons of stuff was logged to the screen unfortunately, but if you look closely you'll see something like:
-     ```text
-     ...omitted...
-     Creating Schema History table "public"."flyway_schema_history" ...
-     Migrating schema "public" to version "1 - observations-schema"
-     Migrating schema "public" to version "2 - observations-data"
-     Successfully applied 2 migrations to schema "public", now at version v2 (execution time 00:00.176s)
-     ...omitted...
-     ```
-4. Run the Java program
-   * ```shell
-     ./gradlew run
-     ```
-   * Notice that the program successfully read from the table!
-5. Stop the database
-   * ```shell
-     docker-compose down
-     ```
+The subprojects include:
 
+
+### `basic/`
+
+A simple Gradle and Java project that builds a database schema using Flyway.
+
+See the README in [basic/](basic/).
+
+
+## Wish List
+
+General clean-ups, TODOs and things I wish to implement for this project:
+
+* [ ] IN PROGRESS Consider creating a `basic/` and an `advanced/` subproject. I want to keep the basic stuff optimized for getting
+  up running. In `advanced/` I want to do stuff like create a custom Java-based migration, andy maybe explore idempotent
+  things like repeatable migrations. And other features I'm not considering.
+  * [x] DONE Create a `basic/` subproject.
 
 ## Reference
 
